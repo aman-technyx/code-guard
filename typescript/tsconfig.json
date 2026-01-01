@@ -1,0 +1,84 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "@qvaroo/configs - Base TypeScript Configuration",
+    "compilerOptions": {
+        "strict": true,
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noFallthroughCasesInSwitch": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "strictBindCallApply": true,
+        "strictPropertyInitialization": true,
+        "useUnknownInCatchVariables": true,
+        "noUncheckedIndexedAccess": true,
+        "exactOptionalPropertyTypes": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "allowUnusedLabels": false,
+        "allowUnreachableCode": false,
+        "target": "ES2022",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "isolatedModules": true,
+        "resolveJsonModule": true,
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
+        "removeComments": false,
+        "skipLibCheck": true,
+        "lib": [
+            "ES2022"
+        ],
+        "types": [
+            "node"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ],
+            "@api/*": [
+                "src/api/*"
+            ],
+            "@components/*": [
+                "src/components/*"
+            ],
+            "@services/*": [
+                "src/services/*"
+            ],
+            "@events/*": [
+                "src/events/*"
+            ],
+            "@animations/*": [
+                "src/animations/*"
+            ],
+            "@styles/*": [
+                "src/styles/*"
+            ],
+            "@utils/*": [
+                "src/utils/*"
+            ],
+            "@types/*": [
+                "src/types/*"
+            ],
+            "@constants/*": [
+                "src/constants/*"
+            ],
+            "@hooks/*": [
+                "src/hooks/*"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+        "build",
+        "coverage"
+    ]
+}

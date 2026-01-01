@@ -1,0 +1,59 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "@qvaroo/configs - React TypeScript Configuration",
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "lib": [
+            "ES2022",
+            "DOM",
+            "DOM.Iterable"
+        ],
+        "types": [
+            "node",
+            "react",
+            "react-dom"
+        ],
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "allowJs": true,
+        "paths": {
+            "@/*": [
+                "src/*"
+            ],
+            "@api/*": [
+                "src/api/*"
+            ],
+            "@components/*": [
+                "src/components/*"
+            ],
+            "@services/*": [
+                "src/services/*"
+            ],
+            "@events/*": [
+                "src/events/*"
+            ],
+            "@animations/*": [
+                "src/animations/*"
+            ],
+            "@styles/*": [
+                "src/styles/*"
+            ],
+            "@utils/*": [
+                "src/utils/*"
+            ],
+            "@types/*": [
+                "src/types/*"
+            ],
+            "@constants/*": [
+                "src/constants/*"
+            ],
+            "@hooks/*": [
+                "src/hooks/*"
+            ],
+            "@views/*": [
+                "src/views/*"
+            ]
+        }
+    }
+}

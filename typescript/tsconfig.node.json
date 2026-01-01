@@ -1,0 +1,52 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "@qvaroo/configs - Node.js TypeScript Configuration",
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "lib": [
+            "ES2022"
+        ],
+        "target": "ES2022",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "types": [
+            "node"
+        ],
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "declaration": true,
+        "declarationMap": true,
+        "paths": {
+            "@/*": [
+                "src/*"
+            ],
+            "@api/*": [
+                "src/api/*"
+            ],
+            "@controllers/*": [
+                "src/controllers/*"
+            ],
+            "@services/*": [
+                "src/services/*"
+            ],
+            "@models/*": [
+                "src/models/*"
+            ],
+            "@middleware/*": [
+                "src/middleware/*"
+            ],
+            "@utils/*": [
+                "src/utils/*"
+            ],
+            "@types/*": [
+                "src/types/*"
+            ],
+            "@constants/*": [
+                "src/constants/*"
+            ],
+            "@config/*": [
+                "src/config/*"
+            ]
+        }
+    }
+}
