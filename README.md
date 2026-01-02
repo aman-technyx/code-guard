@@ -27,39 +27,38 @@ npm install --save-dev eslint prettier typescript
 
 ## 🚀 Quick Setup
 
-### 1. ESLint Configuration
+### 1. ESLint Configuration (New Flat Config)
+Create `eslint.config.mjs` in your project root:
 
-Create `.eslintrc.js` in your project root:
-
-**For React/Next.js projects:**
 ```javascript
-module.exports = {
-  extends: ['./node_modules/@qvaroo/configs/eslint/react.js'],
-  parserOptions: {
-    project: './tsconfig.json',
-    tsconfigRootDir: __dirname,
-  },
-};
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
+const { 
+    namingConventions, 
+    codeQuality,
+    spellcheck
+} = require('@qvaroo/configs');
+
+export default [
+    {
+        files: ['**/*.{ts,tsx}'],
+        rules: {
+            ...namingConventions,
+            ...codeQuality,
+            ...spellcheck
+        },
+    },
+];
 ```
 
-**For Node.js/Backend projects:**
-```javascript
-module.exports = {
-  extends: ['./node_modules/@qvaroo/configs/eslint/node.js'],
-  parserOptions: {
-    project: './tsconfig.json',
-    tsconfigRootDir: __dirname,
-  },
-};
-```
-
-**For base TypeScript projects:**
+** Legacy Config (.eslintrc.js):**
+If you are still using the legacy config system:
 ```javascript
 module.exports = {
   extends: ['./node_modules/@qvaroo/configs/eslint/index.js'],
   parserOptions: {
     project: './tsconfig.json',
-    tsconfigRootDir: __dirname,
   },
 };
 ```
@@ -137,38 +136,7 @@ Create `tsconfig.json`:
 
 ---
 
-## 🏗️ Folder Structure Enforcement
 
-Required project structure:
-
-```
-src/
-├── api/          # API clients & endpoints
-├── components/   # Reusable UI components
-├── services/     # Business logic layer
-├── events/       # Event handlers & emitters
-├── animations/   # Animation definitions
-├── styles/       # Global styles & themes
-├── hooks/        # Custom React hooks
-├── views/        # Page-level components (presentation only)
-├── types/        # TypeScript interfaces & types
-├── constants/    # Application constants
-└── utils/        # Utility functions
-```
-
-### Boundary Rules
-
-| Layer | Can Import From |
-|-------|-----------------|
-| `views` | components, styles, hooks, animations, constants |
-| `components` | components, styles, hooks, utils, types, animations |
-| `hooks` | services, api, types, utils |
-| `services` | api, types, utils, constants |
-| `api` | types, utils, constants |
-
-> ⚠️ **Views cannot import from `api` or `services` directly!** Use hooks instead.
-
----
 
 ## ⛔️ Local Enforcement (Pre-commit Hooks)
 
@@ -404,7 +372,6 @@ module.exports = {
 │   └── rules/
 │       ├── naming-conventions.js
 │       ├── code-quality.js
-│       ├── architecture.js
 │       └── spellcheck.js
 ├── prettier/
 │   └── index.js          # Prettier config

@@ -7,7 +7,6 @@ export const {
     prettier,
     namingConventions,
     codeQuality,
-    architecture,
     spellcheck
 } = cjs;
 

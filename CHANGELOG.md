@@ -9,11 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial release of @qvaroo/configs
-- **ESLint Configurations**
+- **Dual ESM/CJS Support**
+  - Seamless support for `import` and `require`
+  - Granular rule exports for Flat Config (`eslint.config.mjs`) support
+- **Core ESLint Configurations**
   - Base TypeScript configuration with strict rules
-  - React/Next.js extended configuration with JSX a11y
-  - Node.js/Backend configuration with security rules
+  - Cleaned up React/Node specific configurations to be more generic
 - **Naming Convention Rules**
   - PascalCase for classes, controllers, models, components
   - IPascalCase for interfaces (required I prefix)
@@ -27,10 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - No magic numbers/strings
   - No empty catch blocks
   - Guard clause enforcement
-- **Architecture Rules**
-  - Folder boundary enforcement
-  - View layer separation (no direct API/service imports)
-  - Circular dependency prevention
+
 - **Spellcheck Integration**
   - Variable and function name spelling validation
   - Comprehensive skip list for tech terms

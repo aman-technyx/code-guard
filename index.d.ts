@@ -5,5 +5,4 @@ export declare const prettier: import('prettier').Config;
 
 export declare const namingConventions: Record<string, any>;
 export declare const codeQuality: Record<string, any>;
-export declare const architecture: Record<string, any>;
 export declare const spellcheck: Record<string, any>;

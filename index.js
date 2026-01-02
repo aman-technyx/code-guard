@@ -12,6 +12,5 @@ module.exports = {
     // Individual Rule Sets
     namingConventions: require('./eslint/rules/naming-conventions'),
     codeQuality: require('./eslint/rules/code-quality'),
-    architecture: require('./eslint/rules/architecture'),
     spellcheck: require('./eslint/rules/spellcheck'),
 };

@@ -10,7 +10,6 @@
 
 const namingConventionRules = require('./rules/naming-conventions');
 const codeQualityRules = require('./rules/code-quality');
-const architectureRules = require('./rules/architecture');
 const spellcheckRules = require('./rules/spellcheck');
 
 /** @type {import('eslint').Linter.Config} */
@@ -81,10 +80,7 @@ module.exports = {
         // ═══════════════════════════════════════════════════════════════════════
         ...codeQualityRules,
 
-        // ═══════════════════════════════════════════════════════════════════════
-        // ARCHITECTURE - Folder boundaries and separation of concerns
-        // ═══════════════════════════════════════════════════════════════════════
-        ...architectureRules,
+
 
         // ═══════════════════════════════════════════════════════════════════════
         // SPELLCHECK - Variable name clarity
