@@ -1,6 +1,6 @@
 {
     "name": "@qvaroo/configs",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Centralized Qvaroo coding standards, ESLint, Prettier, and TypeScript configurations for TypeScript frontend projects",
     "main": "index.js",
     "types": "index.d.ts",
@@ -24,6 +24,7 @@
         "prettier/",
         "typescript/",
         "index.js",
+        "index.mjs",
         "index.d.ts"
     ],
     "exports": {
