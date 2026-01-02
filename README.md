@@ -170,6 +170,39 @@ src/
 
 ---
 
+## ⛔️ Local Enforcement (Pre-commit Hooks)
+
+To ensure developers fix errors **before** they commit, set up [Husky](https://typicode.github.io/husky/).
+
+1. **Install Husky & Lint-staged**:
+   ```bash
+   npm install --save-dev husky lint-staged
+   npx husky init
+   ```
+
+2. **Configure Pre-commit Hook**:
+   Update `.husky/pre-commit` to run lint-staged:
+   ```bash
+   npx lint-staged
+   ```
+
+3. **Update `package.json`**:
+   Add the configuration to check only changed files:
+   ```json
+   {
+     "lint-staged": {
+       "src/**/*.{ts,tsx,js}": [
+         "eslint --fix",
+         "prettier --write"
+       ]
+     }
+   }
+   ```
+
+   > Now, if a developer tries to commit code with errors, **git will reject the commit** until fixed.
+
+---
+
 ## 🔧 CI/CD Integration
 
 ### GitHub Actions
