@@ -34,6 +34,11 @@ Create `eslint.config.mjs` in your project root:
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
+// 1. Plugins (must be explicitly imported and registered in Flat Config)
+const spellcheckPlugin = require('eslint-plugin-spellcheck');
+const sonarjsPlugin = require('eslint-plugin-sonarjs');
+
+// 2. Qvaroo Configs
 const { 
     namingConventions, 
     codeQuality,
@@ -43,10 +48,26 @@ const {
 export default [
     {
         files: ['**/*.{ts,tsx}'],
+        
+        // 3. Register Plugins
+        plugins: {
+            'spellcheck': spellcheckPlugin,
+            'sonarjs': sonarjsPlugin
+        },
+
+        // 4. Apply Rules
         rules: {
             ...namingConventions,
             ...codeQuality,
             ...spellcheck
+        },
+        
+        // 5. TypeScript Parser Config (Required for type-aware rules)
+        languageOptions: {
+            parserOptions: {
+                project: true,
+                tsconfigRootDir: import.meta.dirname,
+            },
         },
     },
 ];
