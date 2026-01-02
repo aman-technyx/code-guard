@@ -1,6 +1,6 @@
 {
     "name": "@qvaroo/configs",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Centralized Qvaroo coding standards, ESLint, Prettier, and TypeScript configurations for TypeScript frontend projects",
     "main": "index.js",
     "types": "index.d.ts",
@@ -27,11 +27,31 @@
         "index.d.ts"
     ],
     "exports": {
-        ".": "./index.js",
-        "./eslint": "./eslint/index.js",
-        "./eslint/react": "./eslint/react.js",
-        "./eslint/node": "./eslint/node.js",
-        "./prettier": "./prettier/index.js",
+        ".": {
+            "import": "./index.mjs",
+            "require": "./index.js",
+            "default": "./index.js"
+        },
+        "./eslint": {
+            "import": "./eslint/index.mjs",
+            "require": "./eslint/index.js",
+            "default": "./eslint/index.js"
+        },
+        "./eslint/react": {
+            "import": "./eslint/react.mjs",
+            "require": "./eslint/react.js",
+            "default": "./eslint/react.js"
+        },
+        "./eslint/node": {
+            "import": "./eslint/node.mjs",
+            "require": "./eslint/node.js",
+            "default": "./eslint/node.js"
+        },
+        "./prettier": {
+            "import": "./prettier/index.mjs",
+            "require": "./prettier/index.js",
+            "default": "./prettier/index.js"
+        },
         "./typescript": "./typescript/tsconfig.json",
         "./typescript/react": "./typescript/tsconfig.react.json",
         "./typescript/node": "./typescript/tsconfig.node.json"
